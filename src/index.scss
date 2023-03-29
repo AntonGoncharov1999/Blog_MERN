@@ -144,6 +144,7 @@ header {
   position: absolute;
   left: 0;
   top: 0;
+  bottom: 0;
   background-color: rgba(0, 0, 0, 0.5);
   width: 100%;
   height: 100%;
@@ -151,17 +152,97 @@ header {
 }
 
 .driwer {
+  display: flex;
+  flex-direction: column;
   position: absolute;
-  width: 325px;
+  width: 420px;
   background: #ffffff;
   right: 0;
   height: 100%;
   box-shadow: -10px 4px 24px rgba(0, 0, 0, 0.01);
-  padding: 30px;
+  padding-left: 30px;
+  padding-right: 30px;
+
+  .items {
+    overflow: auto;
+    margin-bottom: 40px;
+  }
 
   h2 {
     margin: 0;
     font-size: 24px;
+    padding-bottom: 20px;
+    padding-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    img {
+      cursor: pointer;
+    }
+  }
+
+  .items {
+    flex: 1;
+  }
+
+  .cardTotalBlock {
+    ul {
+      margin-bottom: 20px;
+
+      li {
+        display: flex;
+        align-items: flex-end;
+        margin-bottom: 20px;
+
+        div {
+          flex: 1;
+          height: 1px;
+          border-bottom: 1px dashed #dfdfdf;
+          position: relative;
+          top: -4px;
+          margin: 0 7px;
+        }
+      }
+
+    }
+
+    button {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 55px;
+      background: #9dd558;
+      border-radius: 18px;
+      border: 0;
+      font-size: 16px;
+      margin-bottom: 30px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background 0.1s ease-in-out;
+
+      &:hover {
+        background: lighten(#9dd558, 10%);
+      }
+
+      &:hover {
+        img {
+          transform: translateX(5px);
+        }
+      }
+
+      &:active {
+        background: darken(#9dd558, 5%);
+      }
+
+      img {
+        position: absolute;
+        right: 30px;
+        transition: transform 0.15s ease-in-out;
+      }
+    }
   }
 
   .cartItem {
@@ -170,14 +251,21 @@ header {
     border: 1px solid #f3f3f3;
     border-radius: 20px;
     overflow: hidden;
+    padding: 20px;
+    margin-bottom: 20px;
 
-    img {
-      margin: 20px;
+    .cartImage {
+      height: 70px;
+      width: 70px;
+      background-size: cover;
+      background-position: center;
+      margin-right: 20px;
     }
 
     p {
       margin: 10px;
       font-size: 16px;
+      margin: 0px;
     }
 
     b {
