@@ -2,6 +2,17 @@ import Card from './companents/Card';
 import Header from './companents/Header';
 import Driwer from './companents/Driwer';
 
+const arr = [
+  { title: 'Токийские мстители. Том 1.', price: '990', imageUrl: '/img//manga/tokyo _evengers_1.webp' },
+  { title: 'Токийские мстители. Том 2.', price: '990', imageUrl: '/img//manga/tokyo _evengers_2.webp' },
+  { title: 'Токийские мстители. Том 3.', price: '1119', imageUrl: '/img//manga/tokyo _evengers_3.webp' },
+  { title: 'Токийские мстители. Том 4.', price: '1119', imageUrl: '/img//manga/tokyo _evengers_4.webp' },
+  { title: 'Токийские мстители. Том 5.', price: '1119', imageUrl: '/img//manga/tokyo _evengers_5.webp' },
+  { title: 'Токийские мстители. Том 6.', price: '1119', imageUrl: '/img//manga/tokyo _evengers_6.webp' },
+  { title: 'Токийские мстители. Том 7.', price: '1119', imageUrl: '/img//manga/tokyo _evengers_7.webp' },
+  { title: 'Токийские мстители. Том 8.', price: '1119', imageUrl: '/img//manga/tokyo _evengers_8.webp' }
+]
+
 function App() {
   return (
     <div className="wrapper">
@@ -16,7 +27,13 @@ function App() {
           </div>
         </div>
         <div className='manga'>
-          <Card />
+          {arr.map((obj) => (
+            <Card
+              title={obj.title}
+              price={obj.price}
+              imageUrl={obj.imageUrl}
+            />
+          ))}
         </div>
       </div>
     </div>
