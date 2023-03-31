@@ -1,27 +1,29 @@
+import style from './Driwer.module.scss'
+
 function Driwer() {
     return (
-        <div style={{ display: 'none' }} className='overlay'>
-            <div className='driwer'>
-                <h2>Корзина <img className='removeBtn' width={30} height={30} src='/img/close.svg' alt=''></img></h2>
-                <div className='items'>
-                    <div className='cartItem'>
-                        <div style={{ backgroundImage: "url('/img/manga/tokyo _evengers_1.webp')" }} className='cartImage'></div>
+        <div style={{ display: 'none' }} className={style.overlay}>
+            <div className={style.driwer}>
+                <h2>Корзина <img className={style.removeBtn} width={30} height={30} src='/img/close.svg' alt=''></img></h2>
+                <div className={style.items}>
+                    <div className={style.cartItem}>
+                        <div style={{ backgroundImage: "url('/img/manga/tokyo _evengers_1.webp')" }} className={style.cartImage}></div>
                         <div>
                             <p>Токийские мстители. Том 1</p>
                             <b>1 119 руб</b>
                         </div>
-                        <img className='removeBtn' width={30} height={30} src='/img/close.svg' alt=''></img>
+                        <img className={style.removeBtn} width={30} height={30} src='/img/close.svg' alt=''></img>
                     </div>
-                    <div className='cartItem'>
-                        <div style={{ backgroundImage: "url('/img/manga/tokyo _evengers_2.webp')" }} className='cartImage'></div>
+                    <div className={style.cartItem}>
+                        <div style={{ backgroundImage: "url('/img/manga/tokyo _evengers_2.webp')" }} className={style.cartImage}></div>
                         <div>
                             <p>Токийские мстители. Том 2</p>
                             <b>1 119 руб</b>
                         </div>
-                        <img className='removeBtn' width={30} height={30} src='/img/close.svg' alt=''></img>
+                        <img className={style.removeBtn} width={30} height={30} src='/img/close.svg' alt=''></img>
                     </div>
                 </div>
-                <div className='cardTotalBlock'>
+                <div className={style.cardTotalBlock}>
                     <ul>
                         <li>
                             <span>Итого:</span>
