@@ -9,11 +9,13 @@ function App() {
   const [cartOpened, setCartOpened] = React.useState(false);
   const [mangaItems, setMangaItems] = React.useState([]);
 
-  fetch('https://6426f89c556bad2a5b5c9fa3.mockapi.io/manga').then((res) => {
-    return res.json();
-  }).then((json) => {
-    setMangaItems(json)
-  });
+  React.useEffect(() => {
+    fetch('https://6426f89c556bad2a5b5c9fa3.mockapi.io/manga').then((res) => {
+      return res.json();
+    }).then((json) => {
+      setMangaItems(json)
+    });
+  }, []);
 
   return (
 
