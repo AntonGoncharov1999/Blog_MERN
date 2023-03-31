@@ -1,10 +1,10 @@
 import style from './Driwer.module.scss'
 
-function Driwer() {
+function Driwer(props) {
     return (
-        <div style={{ display: 'none' }} className={style.overlay}>
+        <div className={style.overlay}>
             <div className={style.driwer}>
-                <h2>Корзина <img className={style.removeBtn} width={30} height={30} src='/img/close.svg' alt=''></img></h2>
+                <h2>Корзина <img className={style.removeBtn} onClick={props.onClose} width={30} height={30} src='/img/close.svg' alt=''></img></h2>
                 <div className={style.items}>
                     <div className={style.cartItem}>
                         <div style={{ backgroundImage: "url('/img/manga/tokyo _evengers_1.webp')" }} className={style.cartImage}></div>

@@ -1,3 +1,4 @@
+import React from 'react'
 import Card from './companents/Card';
 import Header from './companents/Header';
 import Driwer from './companents/Driwer';
@@ -14,10 +15,12 @@ const arr = [
 ]
 
 function App() {
+  const [cartOpened, setCartOpened] = React.useState(false);
   return (
+
     <div className="wrapper">
-      <Driwer />
-      <Header />
+      {cartOpened && <Driwer onClose={() => { setCartOpened(false) }} />}
+      <Header onClickCart={() => setCartOpened(true)} />
       <div className='content'>
         <div className='content-top'>
           <h1>Манга</h1>
@@ -32,6 +35,8 @@ function App() {
               title={obj.title}
               price={obj.price}
               imageUrl={obj.imageUrl}
+              onClickAdd={() => console.log('Добавили в корзину')}
+              onClickFavorite={() => console.log('Добавили в закладки')}
             />
           ))}
         </div>
