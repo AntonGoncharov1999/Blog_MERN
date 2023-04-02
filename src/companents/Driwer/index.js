@@ -1,27 +1,21 @@
 import style from './Driwer.module.scss'
 
-function Driwer(props) {
+function Driwer({ onClose, items = [], onRemove }) {
     return (
         <div className={style.overlay}>
             <div className={style.driwer}>
-                <h2>Корзина <img className={style.removeBtn} onClick={props.onClose} width={30} height={30} src='/img/close.svg' alt=''></img></h2>
+                <h2>Корзина <img className={style.removeBtn} onClick={onClose} width={30} height={30} src='/img/close.svg' alt=''></img></h2>
                 <div className={style.items}>
-                    <div className={style.cartItem}>
-                        <div style={{ backgroundImage: "url('/img/manga/tokyo _evengers_1.webp')" }} className={style.cartImage}></div>
-                        <div>
-                            <p>Токийские мстители. Том 1</p>
-                            <b>1 119 руб</b>
+                    {items.map((obj) => (
+                        <div className={style.cartItem}>
+                            <div style={{ backgroundImage: `url('${obj.imageUrl}')` }} className={style.cartImage}></div>
+                            <div>
+                                <p>{obj.title}</p>
+                                <b>{obj.price} руб</b>
+                            </div>
+                            <img onClick={() => onRemove(obj.id)} className={style.removeBtn} width={30} height={30} src='/img/close.svg' alt='' />
                         </div>
-                        <img className={style.removeBtn} width={30} height={30} src='/img/close.svg' alt=''></img>
-                    </div>
-                    <div className={style.cartItem}>
-                        <div style={{ backgroundImage: "url('/img/manga/tokyo _evengers_2.webp')" }} className={style.cartImage}></div>
-                        <div>
-                            <p>Токийские мстители. Том 2</p>
-                            <b>1 119 руб</b>
-                        </div>
-                        <img className={style.removeBtn} width={30} height={30} src='/img/close.svg' alt=''></img>
-                    </div>
+                    ))}
                 </div>
                 <div className={style.cardTotalBlock}>
                     <ul>
