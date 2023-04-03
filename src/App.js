@@ -53,7 +53,6 @@ function App() {
               price={obj.price}
               imageUrl={obj.imageUrl}
               onClickAdd={(cartItem) => onAddToCart(cartItem)}
-              onClickFavorite={() => console.log('Добавили в закладки')}
             />
           ))}
         </div>
